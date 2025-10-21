@@ -12,3 +12,19 @@ def character_count(text):
     else:
       char_counts[lower_char] += 1
   return char_counts
+
+
+def sortCriteria(d):
+  return d["num"]
+
+
+def sort_dict(word_count_dict):
+  list_of_dicts = []
+  for key in word_count_dict:
+    dct = {}
+    dct["key"] = key
+    dct["num"] = word_count_dict[key]
+    list_of_dicts.append(dct)
+  list_of_dicts.sort(key=sortCriteria, reverse=True)
+  return list_of_dicts
+
